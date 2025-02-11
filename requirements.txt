@@ -1,0 +1,10 @@
+
+streamlit
+nltk
+scikit-learn
+xgboost
+pandas
+numpy
+prettytable
+tldextract
+pickle
