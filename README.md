@@ -1,59 +1,86 @@
 # Email Spam Classification
 
-This project is an email spam classification system that uses machine learning to classify emails as spam or not spam. The system 
-processes raw email text, extracts metadata, and uses machine learning models to predict whether the email is spam or not.
+This project uses machine learning to classify emails as either spam or not spam based on their content and metadata. It leverages several features from the email message, such as the subject, sender's domain, and presence of suspicious links or attachments. The model is built using a combination of Natural Language Processing (NLP) techniques and machine learning algorithms.
+
+## Overview
+
+This repository contains two main parts:
+
+1. **Data Preprocessing and Model Training:** We prepare the dataset, extract relevant metadata, clean and preprocess the text, and train a machine learning model to classify emails.
+2. **Streamlit Web Application:** A simple user interface that allows you to input email text and get a classification of whether the email is spam or not.
 
 ## Features
 
-- **Email Text Preprocessing**: Cleans and preprocesses raw email text (removes stop words, punctuation, and performs lemmatization).
-- **Metadata Extraction**: Extracts metadata features like sender domain, reply-to mismatch, subject length, number of links, attachments, etc.
-- **Spam Classification**: Utilizes machine learning models such as Multinomial Naive Bayes (MNB) and XGBoost to classify emails.
-- **Streamlit UI**: A simple web interface using Streamlit to allow users to input email text and get predictions.
+- **Text Preprocessing:** Emails are processed by tokenizing, removing stopwords, and lemmatizing words.
+- **Metadata Extraction:** Key email metadata like sender domain, subject length, number of links, and attachments are extracted for classification.
+- **Model Evaluation:** We train and evaluate different machine learning models (Multinomial Naive Bayes and XGBoost) on the dataset to determine the best performer.
+- **Interactive Web Interface:** Using Streamlit, the app allows users to input email content and instantly classify whether the email is spam or not.
 
 ## Installation
 
-To run this project, you need Python 3.x and the necessary dependencies.
+To run the project, follow these steps:
 
-### Steps to set up the environment:
+### Clone the repository:
+```bash
+git clone https://github.com/your_username/email_spam_classification.git
+cd email_spam_classification
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/email-spam-classification.git
-   cd email-spam-classification
-Install the required libraries: Make sure you have pip installed, then run the following command in your terminal:
-
-bash
-Copy
-Edit
+### Install the necessary dependencies:
+```bash
 pip install -r requirements.txt
-Run the Streamlit app: After installing the dependencies, you can start the Streamlit app:
+```
 
-bash
-Copy
-Edit
+The `requirements.txt` includes the following dependencies:
+
+```
+streamlit
+nltk
+scikit-learn
+xgboost
+pandas
+numpy
+prettytable
+tldextract
+pickle
+```
+
+Download or place the `spam.csv` dataset (used for training the model) in the project directory.
+
+### Run the Streamlit application:
+```bash
 streamlit run app.py
-Usage
-Open the web interface.
-Paste the email text into the text box.
-Click on Classify Email to get the spam prediction.
-The result will show whether the email is Spam or Not Spam, along with the extracted metadata features.
-Models
-This project uses the following machine learning models:
+```
 
-Multinomial Naive Bayes (MNB)
-XGBoost Classifier (XGB)
-Files Included
-app.py: Streamlit application that provides the UI for the email spam classification.
-spam.csv: Dataset used for training the model (emails labeled as spam or not spam).
-vectorizer.pkl: Saved TF-IDF vectorizer for text feature extraction.
-model.pkl: Trained spam classification model.
-Requirements
-Python 3.x
-Streamlit
-NLTK
-Scikit-learn
-XGBoost
-Pandas
-NumPy
-PrettyTable
-TLDExtract
+This will open the app in your browser where you can start classifying emails.
+
+## How It Works
+
+### Data Preparation
+The data consists of labeled emails, with each email marked as either spam or not spam. The text of each email is preprocessed by tokenizing it, converting it to lowercase, removing stopwords, and lemmatizing the words.
+
+### Metadata Extraction
+Additional features are extracted from the email metadata, such as the sender’s domain, whether the email is HTML formatted, the presence of links and attachments, and other factors that might indicate spam.
+
+### Model Training
+The processed email text and extracted metadata are used to train a machine learning model. We use Multinomial Naive Bayes and XGBoost classifiers, which are evaluated based on accuracy, precision, and confusion matrix.
+
+### Streamlit Web Interface
+The app allows you to input the email text, preprocesses the text and metadata, and classifies the email as spam or not spam using the trained model. It then displays the classification result along with the extracted metadata.
+
+## Example Usage
+
+To classify an email, simply copy and paste the email content into the text box on the web interface and press "Classify Email". The model will then display whether the email is spam or not.
+
+### Example Output:
+- **Spam Email:** "🚨 Spam Email! 🚨"
+  - The email might contain suspicious elements such as unknown domains, mismatched reply-to addresses, or suspicious links.
+- **Not Spam Email:** "✅ Not Spam Email"
+  - The email does not show typical spam characteristics.
+
+## Model Performance
+
+We evaluate the model's performance using accuracy, precision, and confusion matrix. The models are trained on a dataset of labeled emails, and their effectiveness is tested on unseen data. The results are shown in a table format for easy comparison.
+
+
+
