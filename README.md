@@ -27,7 +27,8 @@ This repository contains two main parts:
 
 
                    
---YOU CAN INSTALL LOCALLY IN YOUR COMPUTER--
+**--              OR   
+YOU CAN INSTALL LOCALLY IN YOUR COMPUTER--**
 
 ## Installation
 
