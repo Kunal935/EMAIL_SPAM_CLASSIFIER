@@ -16,6 +16,16 @@ This repository contains two main parts:
 - **Model Evaluation:** We train and evaluate different machine learning models (Multinomial Naive Bayes and XGBoost) on the dataset to determine the best performer.
 - **Interactive Web Interface:** Using Streamlit, the app allows users to input email content and instantly classify whether the email is spam or not.
 
+ 👇👇👇👇👇👇👇👇👇👇👇👇👇👇
+👉👉 DIRECT LINK OF THIS GAME 👈👈 
+ :- https://emailspamclassifier-tttmxmvf4p46na8dhbffii.streamlit.app/
+
+👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆
+
+
+                  OR  
+--you can install locally in your computer--
+
 ## Installation
 
 To run the project, follow these steps:
