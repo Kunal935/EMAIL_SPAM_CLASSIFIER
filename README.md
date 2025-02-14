@@ -20,7 +20,7 @@ This repository contains two main parts:
 
 
      
-###👉👉 **DIRECT LINK OF EMAIL SPAM CLASSIFIER** 👈👈 
+### DIRECT LINK OF EMAIL SPAM CLASSIFIER 
  :- https://emailspamclassifier-tttmxmvf4p46na8dhbffii.streamlit.app/
 
 
