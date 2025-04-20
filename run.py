@@ -15,8 +15,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # Load saved models and vectorizers
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
-nltk.download('punkt')
 nltk.data.path.append("./nltk_data")
+nltk.download('punkt')
 
 # Function to preprocess and clean the email text
 def transform_text(text):
