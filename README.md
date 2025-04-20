@@ -21,9 +21,12 @@ This repository contains two main parts:
 
      
 ### DIRECT LINK OF EMAIL SPAM CLASSIFIER 
- :- https://emailspamclassifier-tttmxmvf4p46na8dhbffii.streamlit.app/
+ :- [https://emailspamclassifier-tttmxmvf4p46na8dhbffii.streamlit.app/](https://emailspamclassifier-kiiwcjxrzbvbjbqujxyohu.streamlit.app/)
 
 
+
+if that link doesn't work 
+use this 
 
 
                    
