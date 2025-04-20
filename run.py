@@ -12,11 +12,14 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+# Ensure necessary NLTK resources are downloaded
+nltk.data.path.append("./nltk_data")
+nltk.download('punkt')
+nltk.download('stopwords')
+
 # Load saved models and vectorizers
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
-nltk.data.path.append("./nltk_data")
-nltk.download('punkt')
 
 # Function to preprocess and clean the email text
 def transform_text(text):
@@ -46,7 +49,7 @@ def extract_metadata(email_content):
             "Num_Attachments": sum(1 for part in msg.walk() if part.get_content_disposition() == "attachment"),
             "Is_Shortened_URL": int(any(tldextract.extract(url).domain in {"bit.ly", "tinyurl.com"} for url in re.findall(r"https?://[^\s]+", msg.get_payload(decode=True).decode(errors="ignore") if msg.get_payload() else "")))
         }
-    except:
+    except Exception as e:
         features = {
             "Sender_Domain": "unknown_domain",
             "Reply_To_Mismatch": 0,
