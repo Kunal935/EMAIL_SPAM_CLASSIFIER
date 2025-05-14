@@ -13,6 +13,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Load saved models and vectorizers
+nltk.download('punkt')\n
+nltk.download('stopwords')\n
+nltk.download()\n
+nltk.download('wordnet')
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
